@@ -1,9 +1,12 @@
-# nftaggro
-#Installation
-download all files from GitHub
-put all files in one directory
-you need to unarchive file venv.rar and put it in your created directory
-#Usage -open config.py -write your data about pgAdmin4 -save it. in main.py change X-API-Key to your key, which you can get from your miralis account -save it
-in pgAdmin4 you need to create tables First table 'nft' with attributes ( nfr_id int primary key, mint text, standart text, namee text, symbol text )
-Second table 'metaplex' with attributes( metaplex_id int primary key, metadatauri text, updateauthority text, sellerfeebasispoints bigint, primarysalehappened bigint, ismutable bool, masteedition bool, nft_id foreign key )
-Third table 'owners' with attributes ( owners_id int rimary key, address text, verified int, shared bigint, nft_id int foreign key )
+nftaggregator
+NFT aggregator is a web service for collecting an information about NFTs in Solana.
+
+Installation
+You need to pip install next libraries: Flask, request, session, redirect, url_for, render_template, flash, psycopg2, psycopg2.extras, re, generate_password_hash, check_password_hash
+from flask import Flask, request, session, redirect, url_for, render_template, flash
+import psycopg2 #pip install psycopg2 
+import psycopg2.extras
+import re 
+from werkzeug.security import generate_password_hash, check_password_hash
+After step 1, you need to download PostgreSQL
+Install all files from nftaggregator folder and connect it with your database
